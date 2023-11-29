@@ -72,6 +72,16 @@ async def mem_r(ctx):
             await ctx.send(file=mem_)
 
 @bot.command()
+async def mem_a(ctx):
+
+    choice = random.choice(os.listdir("C:/Users/Mehmet Ali Öncü/Desktop/pro/images_animal"))
+
+    with open(f'C:/Users/Mehmet Ali Öncü/Desktop/pro/images_animal/{choice}', 'rb') as mems:
+            mem_a = discord.File(mems)
+
+            await ctx.send(file=mem_a)
+
+@bot.command()
 async def duck(ctx):
     image_url = get_duck_image_url()
     await ctx.send(image_url)
